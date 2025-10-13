@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gerador de Plano de Aula</title>
+</head>
+<body>
+  <h1>Gerador de Plano de Aula com IA</h1>
+  <form id="form">
+    <label>Tema: <input name="tema" required /></label><br />
+    <label>Nível: <input name="nivel" required /></label><br />
+    <label>Idade/Ano: <input name="idade" required /></label><br />
+    <label>Duração (minutos): <input name="duracao" type="number" required /></label><br />
+    <label>BNCC: <input name="bncc" required /></label><br />
+    <label>Recursos: <input name="recursos" /></label><br />
+    <button type="submit">Gerar</button>
+  </form>
+  <pre id="result"></pre>
+  <script>
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const res = await fetch('/api/generate', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify(data)
+      });
+      const json = await res.json();
+      if (res.ok) result.textContent = JSON.stringify(json, null, 2);
+      else result.textContent = 'Erro: ' + (json.message || JSON.stringify(json));
+    });
+  </script>
+</body>
+</html>
