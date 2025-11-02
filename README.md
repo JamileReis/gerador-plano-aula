@@ -20,7 +20,6 @@ Categoria	Tecnologia	Função
 Backend	Java 21 + Spring Boot 3.2	Núcleo da aplicação
 Inteligência Artificial	Google Gemini API	Geração dos planos de aula
 Banco de Dados	Supabase	Armazenamento e autenticação
-Frontend	HTML + JavaScript puro	Interface simples de usuário
 Comunicação Web	Spring WebFlux / WebClient	Requisições assíncronas e reativas
 Serialização	Jackson Databind	Manipulação de JSON
 Configuração	Variáveis de ambiente (.env / application.properties)	Gerenciamento seguro de chaves e URLs
