@@ -27,6 +27,38 @@ public class ResponseDto {
         this.duracao = duracao;
     }
 
+    public void setIntroducao(Object introducao) {
+        this.introducao = (String) introducao;
+    }
+
+    public void setObjetivoBNCC(String objetivoBNCC) {
+        this.objetivoBNCC = objetivoBNCC;
+    }
+
+    public void setPassoAPasso(List<String> passoAPasso) {
+        this.passoAPasso = passoAPasso;
+    }
+
+    public void setRubrica(List<Map<String, String>> rubrica) {
+        this.rubrica = rubrica;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
+    }
+
     public String getIntroducao() {
         return introducao;
     }
@@ -58,5 +90,7 @@ public class ResponseDto {
     public Integer getDuracao() {
         return duracao;
     }
+
+
 }
 

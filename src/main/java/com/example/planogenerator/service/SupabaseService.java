@@ -52,7 +52,6 @@ public class SupabaseService {
                 .uri("/planos_aula")
                 .bodyValue(payload)
                 .retrieve()
-                // Tratamento de erros para status 4xx e 5xx
                 .onStatus(status -> status.is4xxClientError(), response ->
                         response.bodyToMono(String.class)
                                 .flatMap(body -> {
@@ -64,7 +63,7 @@ public class SupabaseService {
                         Mono.error(new RuntimeException("Erro 5xx Supabase: falha no servidor Supabase."))
                 )
                 .bodyToMono(Void.class)
-                .doOnSuccess(v -> System.out.println("Persistência no Supabase OK. Status 2xx"))
+                .timeout(java.time.Duration.ofSeconds(30))
                 .then();
     }
 }
