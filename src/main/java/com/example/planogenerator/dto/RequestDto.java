@@ -30,6 +30,31 @@ public class RequestDto {
         this.bncc = bncc;
         this.recursos = recursos;
     }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
+    }
+
+    public void setBncc(String bncc) {
+        this.bncc = bncc;
+    }
+
+    public void setRecursos(String recursos) {
+        this.recursos = recursos;
+    }
+
     public String getTema() {
         return tema;
     }
@@ -52,5 +77,21 @@ public class RequestDto {
 
     public String getRecursos() {
         return recursos;
+    }
+
+    public Integer duracao() {
+        return duracao;
+    }
+
+    public String tema() {
+        return tema;
+    }
+
+    public String nivel() {
+        return nivel;
+    }
+
+    public String idade() {
+        return idade;
     }
 }
