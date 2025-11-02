@@ -1,19 +1,15 @@
-CREATE TABLE IF NOT EXISTS public.planos_aula (
-    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
-    user_id uuid REFERENCES auth.users NOT NULL,
-    tema text,
-    nivel text,
-    idade text,
-    duracao integer,
-    introducao text,
-    objetivo_bncc text,
-    passo_a_passo JSONB,
-    rubrica JSONB,
-    created_at timestamptz DEFAULT now()
-    );
+DROP TABLE IF EXISTS public.planos_aula;
 
-ALTER TABLE public.planos_aula ENABLE ROW LEVEL SECURITY;
-
-CREATE POLICY "Usuários podem gerenciar seus planos" ON public.planos_aula
-    FOR ALL USING (auth.uid() = user_id)
-    WITH CHECK (auth.uid() = user_id);
+CREATE TABLE public.planos_aula (
+ id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+ user_id uuid,
+ tema text NOT NULL,
+ nivel text NOT NULL,
+ idade text NOT NULL,
+ duracao integer NOT NULL,
+ introducao text NOT NULL,
+ objetivo_bncc text NOT NULL,
+ passo_a_passo JSONB NOT NULL,
+ rubrica JSONB NOT NULL,
+ created_at timestamptz DEFAULT now()
+);
