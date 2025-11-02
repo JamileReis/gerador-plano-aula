@@ -22,4 +22,3 @@ Inteligência Artificial	Google Gemini API	Geração dos planos de aula
 Banco de Dados	Supabase	Armazenamento e autenticação
 Comunicação Web	Spring WebFlux / WebClient	Requisições assíncronas e reativas
 Serialização	Jackson Databind	Manipulação de JSON
-Configuração	Variáveis de ambiente (.env / application.properties)	Gerenciamento seguro de chaves e URLs
