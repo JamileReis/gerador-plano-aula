@@ -1,0 +1,7 @@
+com\example\planogenerator\service\GeminiService.class
+com\example\planogenerator\config\WebClientConfig.class
+com\example\planogenerator\service\SupabaseService.class
+com\example\planogenerator\PlanoAulaGeneratorApplication.class
+com\example\planogenerator\dto\ResponseDto.class
+com\example\planogenerator\controller\PlanoController.class
+com\example\planogenerator\dto\RequestDto.class
