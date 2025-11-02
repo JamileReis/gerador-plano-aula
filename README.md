@@ -1,24 +1,26 @@
 # 🎓 Gerador de Planos de Aula com IA
 
-Aplicação que gera planos de aula personalizados utilizando **IA (Gemini API)** e armazena os resultados no **Supabase**.  
-O projeto foi desenvolvido em **Java 21** com **Spring Boot 3.2** e inclui uma interface simples em **HTML**.
+🧠 Gerador de Planos de Aula com IA
 
----
+Resumo:
+Aplicação em Java (Spring Boot 3.2) que utiliza a API Gemini do Google para gerar planos de aula personalizados em formato JSON, salvando-os no Supabase.
 
-## 🚀 Tecnologias Utilizadas
+🚀 Principais Funcionalidades
 
-- **Java 21**
-- **Spring Boot 3.2**
-- **Supabase** (Banco de dados e autenticação)
-- **Google Gemini API**
-- **HTML / JavaScript puro** (Frontend)
+Formulário para o usuário inserir dados do plano de aula.
 
----
+Integração com a Gemini API (modelo gemini-2.5-flash) para gerar conteúdo estruturado (introdução, BNCC, etapas e rubrica).
 
-## 🧠 Funcionalidades
+Armazenamento automático dos planos gerados no Supabase.
 
-- Formulário para entrada de dados do plano de aula  
-- Integração com **Gemini API** para gerar o conteúdo com base no prompt estruturado  
-- Salvamento do plano gerado no **Supabase**  
-- Exibição do resultado em tela  
-- Estrutura JSON para fácil reutilização dos dados  n
+Exibição do resultado diretamente na interface web.
+
+🧩 Tecnologias Utilizadas
+Categoria	Tecnologia	Função
+Backend	Java 21 + Spring Boot 3.2	Núcleo da aplicação
+Inteligência Artificial	Google Gemini API	Geração dos planos de aula
+Banco de Dados	Supabase	Armazenamento e autenticação
+Frontend	HTML + JavaScript puro	Interface simples de usuário
+Comunicação Web	Spring WebFlux / WebClient	Requisições assíncronas e reativas
+Serialização	Jackson Databind	Manipulação de JSON
+Configuração	Variáveis de ambiente (.env / application.properties)	Gerenciamento seguro de chaves e URLs
