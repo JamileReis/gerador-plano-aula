@@ -15,15 +15,14 @@ import reactor.core.publisher.Mono;
 public class PlanoController {
     @Autowired
     GeminiService geminiService;
+
     @Autowired
     SupabaseService supabaseService;
 
-    @PostMapping("/generate")
+    @PostMapping("/gerador")
     public Mono<ResponseEntity<ResponseDto>> generate(@Valid @RequestBody RequestDto req) throws Exception {
         return geminiService.generatePlan(req)
-                .flatMap(response -> {
-                    return supabaseService.savePlan(response)
-                            .thenReturn(ResponseEntity.ok(response));
-                });
+                .flatMap(response -> supabaseService.savePlan(response)
+                        .thenReturn(ResponseEntity.ok(response)));
     }
 }
