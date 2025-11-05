@@ -2,23 +2,37 @@
 
 🧠 Gerador de Planos de Aula com IA
 
-Resumo:
-Aplicação em Java que utiliza a API Gemini do Google para gerar planos de aula personalizados em formato JSON, salvando-os no Supabase.
+Backend (Java e Frameworks)
+Spring Boot (3.2.0)
 
-🚀 Principais Funcionalidades
+O principal framework de desenvolvimento, facilitando a configuração e execução da aplicação.
 
-Formulário para o usuário inserir dados do plano de aula.
+Spring WebFlux
 
-Integração com a Gemini API para gerar conteúdo estruturado.
+Utilizado para construir a API REST de forma reativa e não-bloqueante, conforme solicitado na sua pergunta.
 
-Armazenamento automático dos planos gerados no Supabase.
+Project Reactor
 
-Exibição do resultado diretamente na interface web.
+A biblioteca de programação reativa (implementando o padrão Reactive Streams), utilizada com tipos como Mono para lidar com a comunicação assíncrona com os serviços externos (Gemini e Supabase).
 
-🧩 Tecnologias Utilizadas
-Categoria	Tecnologia	Função
-Backend	Java 21 + Spring Boot 3.2	Núcleo da aplicação
-Inteligência Artificial	Google Gemini API	Geração dos planos de aula
-Banco de Dados	Supabase	Armazenamento e autenticação
-Comunicação Web	Spring WebFlux / WebClient	Requisições assíncronas e reativas
-Serialização	Jackson Databind	Manipulação de JSON
+Spring WebClient
+
+O cliente HTTP reativo e não-bloqueante, utilizado especificamente para se comunicar com as APIs do Gemini e do Supabase.
+
+Reactor Netty e Netty
+
+O framework de I/O não-bloqueante de baixo nível (Netty) é usado pelo Reactor Netty, que por sua vez é o servidor web/cliente HTTP subjacente padrão do Spring WebFlux/WebClient.
+
+Linguagem e Ferramentas
+Java 21: A linguagem de programação principal, configurada para ser compilada com suporte a recursos de preview.
+
+Maven: O sistema de automação de build e gerenciamento de dependências (pom.xml).
+
+Jackson (jackson-databind): Biblioteca utilizada para manipulação e serialização/desserialização de JSON, essencial para construir o payload da API Gemini e mapear a resposta para o DTO.
+
+Jakarta Bean Validation: Utilizada para validar os objetos de requisição (@Valid em PlanoController.java).
+
+Serviços Externos e Integrações
+Google Gemini API (gemini-2.5-flash): O serviço de Inteligência Artificial generativa usado para criar o conteúdo do plano de aula (o componente central do aplicativo).
+
+Supabase: Serviço de Backend as a Service (BaaS) utilizado para persistir/salvar os planos de aula gerados em um banco de dados externo.
